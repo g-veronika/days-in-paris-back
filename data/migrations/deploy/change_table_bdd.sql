@@ -1,0 +1,39 @@
+-- Deploy days_in_paris:change_table_bdd to pg
+
+BEGIN;
+
+ALTER TABLE "activity"
+DROP COLUMN api_activity_id, 
+DROP COLUMN used_activity, 
+DROP COLUMN date, 
+DROP COLUMN duration, 
+DROP COLUMN user_id,
+DROP COLUMN created_at,
+DROP COLUMN updated_at,
+ADD COLUMN name VARCHAR(100), 
+ADD COLUMN photo_url TEXT, 
+ADD COLUMN formatted_address VARCHAR(255), 
+ADD COLUMN lat FLOAT, 
+ADD COLUMN lng FLOAT,
+ADD COLUMN created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+CREATE TABLE "activity_used"
+(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    start_date VARCHAR(100) NOT NULL,
+    end_date VARCHAR(100) NOT NULL,
+    lng FLOAT NOT NULL,
+    lat FLOAT NOT NULL,
+    user_id INT NOT NULL REFERENCES "user"(id) ON DELETE CASCADE
+);
+
+CREATE TABLE "user_has_activity"
+(
+    id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    activity_id INT NOT NULL REFERENCES "activity"(id) ON DELETE CASCADE,
+    user_id INT NOT NULL REFERENCES "user"(id) ON DELETE CASCADE
+);
+
+COMMIT;

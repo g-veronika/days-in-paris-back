@@ -1,0 +1,7 @@
+dropdb days_in_paris
+
+createdb days_in_paris
+
+sqitch deploy db:pg:days_in_paris
+
+psql -d days_in_paris -f data/import_data.sql

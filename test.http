@@ -1,0 +1,205 @@
+// ========== Test Events ==========
+
+// All activities
+GET https://sinbad-days-in-paris.herokuapp.com/activities/
+###
+POST https://sinbad-days-in-paris.herokuapp.com/activities/
+Content-Type: application/json
+
+{
+    "nextPage": "Aap_uEAduJx3Z6-GCVcnHPKXxgJz5PrwpYgFMm_6QKRxJ3KvTGx5pnHWuFKmd9IVLSdKlEHzVQ7z14qkKKMGVCk8Zh2KrF6SU6mT-o9P9bRv7Bvol8dUQalgDn1Ev2gPMCsXIX0oQ-9ee3lMCU6VI_9Y8UVyzcRji7yXMJ0S7GSFTdGrlcgr8eSZKC3QM5t6V0PUHONAggGdaN_nvSAppkz1dUerDXkZ3NuHTbDGQNFRsNnz71Vp5oqNkDvhxeOI9DfIawiQ7iQ1yZwHhpS9w6ZVNpekcV3HYMFhqFj_IR0GRwu-FD4idROaj4ua6hM_OWNByoVWEpGUsW9Zchv6CT8g-BZ0pFs3fePxU2Ng9830lDrTSuu_V0zQyR--5bCzyol_LindQ2IqP4UPVXEhOEy8K8Q4IVnKXvY"
+}
+
+// One big activity search + All activities
+###
+POST http://localhost:3000/activities/category
+Content-Type: application/json
+
+{
+    "inputValue": "",
+    "category": "museum",
+    "nextPage": ""
+}
+      
+// One activity by name
+###
+GET http://localhost:3001/activity/arc+triomphe
+
+// ========== Test Auth ==========
+
+// Login
+###
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+    {
+        "email": "wsssdsssdw@test.com",
+        "password": "trucmuch" 
+    }
+
+// Signup 
+###
+POST https://sinbad-days-in-paris.herokuapp.com/signup
+Content-Type: application/json
+
+    {
+        "firstName": "wdsdssssdww",
+        "lastName": "Vilkhl", 
+        "email": "tesfstsignup@test.com",
+        "password": "Trucmuch3++"
+    }
+
+// Test signup in production
+###
+POST http://ec2-54-86-41-164.compute-1.amazonaws.com/signup
+Content-Type: application/json
+
+{
+
+        "firstName": "Lou",
+        "lastName": "Vill", 
+        "email": "tt@test.com",
+        "password": "trucmuch"  
+ 
+}
+
+// ========== Test Users ==========
+
+// User 1 profil page
+###
+GET http://localhost:3000/profile
+###
+GET http://localhost:3000/concerts
+
+// ========== Test Admin User ==========
+### 
+GET https://sinbad-days-in-paris.herokuapp.com/admin/users
+
+###
+POST https://sinbad-days-in-paris.herokuapp.com/admin/user
+Content-Type: application/json
+
+{
+        "id": 1
+}
+
+###
+PATCH http://localhost:3000/admin/user/update
+Content-Type: application/json
+
+{
+        "id": 7,
+        "firstName": "AlexUpdate",
+        "lastName": "ddVi", 
+        "email": "tt@testupdate.com",
+        "imgUrl": "https://static.wikia.nocookie.net/heros/images/e/e3/Morty_Infobox.jpg/revision/latest/top-crop/width/360/height/450?cb=20200720083654&path-prefix=fr",
+        "isAdmin": true
+}
+
+###
+GET http://localhost:3000/concerts
+
+###
+GET http://localhost:3000/expositions
+
+
+
+###
+GET http://localhost:3000/activities/show/Expositions
+# GET http://localhost:3000/activities/show/Spectacles
+# GET http://localhost:3000/activities/show/Concerts
+
+=======
+DELETE http://localhost:3000/admin/user/delete
+Content-Type: application/json
+
+{
+        "id": 4
+}
+
+
+// ========== Test Admin Activity ==========
+
+###
+GET http://localhost:3000/admin/activities
+
+###
+POST http://localhost:3000/admin/activity
+Content-Type: application/json
+
+{
+        "id": 1
+}
+
+###
+PATCH http://localhost:3000/admin/activity/update
+Content-Type: application/json
+
+{
+        "id": 1,
+        "name": "Musée du Louvre",
+        "photoUrl": "https://lh3.googleusercontent.com/p/AF1QipP5NKq1lfp-fpMXGkXdhwy_EJHLtfe_droiY2pC=s1600-w400", 
+        "formatted_address": "Adress Update",
+        "lat": 48.8606111,
+        "lng": 2.337644
+}
+// Rue de Rivoli, 75001 Paris, France
+###
+DELETE http://localhost:3000/admin/activity/delete
+Content-Type: application/json
+
+{
+        "id": 9
+}
+
+// ========== Test Admin WishList ==========
+
+###
+GET http://localhost:3000/admin/wishlists
+
+###
+DELETE http://localhost:3000/admin/wishlist/delete
+Content-Type: application/json
+
+{
+    "userId": 7,
+    "activityId": 13
+}
+
+// ========== Test Admin Calendar ==========
+
+###
+GET http://localhost:3000/admin/calendars
+
+###
+POST http://localhost:3000/admin/calendar
+Content-Type: application/json
+
+{
+        "id": 1
+}
+
+###
+PATCH http://localhost:3000/admin/calendar/update
+Content-Type: application/json
+
+{
+        "id": 1,
+        "title": "",
+        "startDate": , 
+        "endDate": "",
+        "lng": 48.8606111,
+        "lat": 2.337644
+}
+// Rue de Rivoli, 75001 Paris, France
+###
+DELETE http://localhost:3000/admin/calendar/delete
+Content-Type: application/json
+
+{
+        "id": 9
+}
+
+###
+GET http://localhost:3000/admin/count
+

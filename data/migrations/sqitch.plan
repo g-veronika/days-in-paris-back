@@ -1,0 +1,9 @@
+%syntax-version=1.0.0
+%project=days_in_paris
+
+init 2021-07-16T09:48:20Z veronika-1994 <g.veronika2021@gmail.com> # Database creation
+second-deploy 2021-07-18T13:21:47Z bcmplx <villainl@hotmail.com> # Second deploy
+dip3 2021-07-23T14:11:32Z bcmplx <villainl@hotmail.com> # Database modifications
+alter_columns_name 2021-07-24T19:14:03Z System Administrator <root@macbook-air-de-alex.home> # change name columns name and lastname
+rename_foreign_key_user 2021-07-26T17:38:13Z System Administrator <root@macbook-air-de-alex.home> # rename foreign key user_info_id -> user_id in activity
+change_table_bdd 2021-07-27T08:39:36Z System Administrator <root@macbook-air-de-alex.home> # MCD update
