@@ -15,7 +15,5 @@ La base de données a été faite en SQL grâce à PostgreSQL et j'ai utilisé p
 ### Conclusion
 Ce projet a été un excellent moyen de se mettre en situation professionnelle en travaillant sur une application complexe, faisant appel à de nombreuses notions et à un travail en équipe que j’ai beaucoup apprécié. 
 Pour l’aspect technique, j’ai dû rechercher et apprendre une multitude de choses, qui m’ont fait, sans aucun doute, m'améliorer et progresser en JavaScript et plus globalement en algorithmie.  
-Travailler en équipe a été un net changement par rapport à la formation et j’ai appris à mieux m’organiser et communiquer.
 Le projet est à sa première version et doit donc encore être amélioré, avec des rajouts de nouvelles fonctionnalités comme la gestion des transports, la réservation des restaurants ou des musées ou encore, l'intégration en front-end de l’utilisation de l’API Que faire à Paris permettant d’avoir les spectacles, les expositions et les concerts.
 Pour une prochaine version, j'envisage d’optimiser le code existant, corriger les bugs et rendre le parcours utilisateur le plus agréable possible.    
-J’ai maintenant hâte de travailler de nouveau sur un projet similaire, voire plus grand, continuer à apprendre et mettre en application mes compétences. 
